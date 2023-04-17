@@ -6,19 +6,18 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeclientComponent } from './pages/homeclient/homeclient.component';
 import { MenuclientComponent } from './pages/menuclient/menuclient.component';
+import { BannermenuComponent } from './components/bannermenu/bannermenu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeclientComponent,
-    MenuclientComponent
+    MenuclientComponent,
+    BannermenuComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
