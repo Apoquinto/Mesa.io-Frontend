@@ -3,13 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReservacionesComponent } from './components/reservaciones/reservaciones.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReservacionesComponent,
   ],
   imports: [
-    BrowserModule,
+   BrowserModule,
     AppRoutingModule
   ],
   providers: [],
