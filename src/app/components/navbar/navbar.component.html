@@ -1,0 +1,55 @@
+<div class="w-full bg-white text-sm py-4 dark:bg-gray-800 flex justify-center">
+  <div
+    class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
+    aria-label="Global"
+    style="width: 60%"
+  >
+    <a class="flex-none text-xl font-semibold dark:text-white" href="#">Logo</a>
+    <nav
+      class="flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:pl-5"
+    >
+      <a
+        class="font-medium"
+        routerLink="/"
+        routerLinkActive="text-blue-500"
+        [routerLinkActiveOptions]="{ exact: true }"
+        aria-current="page"
+        >Inicio</a
+      >
+      <a
+        class="font-medium"
+        routerLink="/menu"
+        routerLinkActive="text-blue-500"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Menu</a
+      >
+      <a
+        class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500"
+        routerLink="/reservaciones"
+        routerLinkActive="text-blue-500"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Reservaciones</a
+      >
+      <a
+        class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500"
+        href="#"
+        >Contactanos</a
+      >
+      <a
+        class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500"
+        href="#"
+        ><svg
+          class="w-3.5 h-3.5"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z"
+          /></svg
+      ></a>
+    </nav>
+  </div>
+</div>
