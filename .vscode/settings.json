@@ -1,5 +1,13 @@
 {
-  "cSpell.words": ["Contactanos", "Inicio", "Menú", "Reservaciones"],
+  "cSpell.words": [
+    "Bannermenu",
+    "Contactanos",
+    "Homeclient",
+    "Inicio",
+    "Menú",
+    "Menuclient",
+    "Reservaciones"
+  ],
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#fa1b49",
     "activityBar.background": "#fa1b49",

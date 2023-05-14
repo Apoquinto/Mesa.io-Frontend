@@ -1,23 +1,28 @@
 <div class="nav-container">
-  <div>
-    <a href="#">Logo</a>
-    <nav>
-      <a
-        routerLink="/"
-        routerLinkActive="text-blue-500"
-        [routerLinkActiveOptions]="{ exact: true }"
-        aria-current="page"
-        >Inicio</a
-      >
-      <a
-        routerLink="/menu"
-        routerLinkActive="text-blue-500"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Menú</a
-      >
-      <a href="#">Reservaciones</a>
-      <a href="#">Contactanos</a>
-      <a href="#"></a>
-    </nav>
-  </div>
+  <!--*Logo-->
+  <a href="#"
+    ><img src="../../../assets/icon/restaurant.png" alt="Logo MesaIo"
+  /></a>
+
+  <!--*Navigation-->
+  <nav>
+    <a
+      routerLink="/"
+      routerLinkActive="text-blue-500"
+      [routerLinkActiveOptions]="{ exact: true }"
+      aria-current="page"
+      >Inicio</a
+    >
+    <a
+      routerLink="/menu"
+      routerLinkActive="text-blue-500"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Menú</a
+    >
+    <a href="#">Contacto</a>
+    <a href="#"
+      ><img src="../../../assets/icon/reservation.png" alt="Reservation Icon"
+    /></a>
+    <a href="#"><img src="../../../assets/icon/cart.png" alt="Cart Icon" /></a>
+  </nav>
 </div>
