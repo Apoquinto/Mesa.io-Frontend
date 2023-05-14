@@ -1,8 +1,15 @@
 <div class="nav-container">
   <!--*Logo-->
-  <a href="#"
-    ><img src="../../../assets/icon/restaurant.png" alt="Logo MesaIo"
-  /></a>
+  <a
+    routerLink="/"
+    routerLinkActive="text-blue-500"
+    [routerLinkActiveOptions]="{ exact: true }"
+    aria-current="page"
+    class="logo-link"
+    href="#"
+    ><img src="../../../assets/icon/restaurant.png" alt="Logo MesaIo" />
+    <p>MesaIo</p></a
+  >
 
   <!--*Navigation-->
   <nav>
@@ -11,15 +18,17 @@
       routerLinkActive="text-blue-500"
       [routerLinkActiveOptions]="{ exact: true }"
       aria-current="page"
-      >Inicio</a
-    >
+      ><img src="../../../assets/icon/home.png" alt="Home Icon"
+    /></a>
     <a
       routerLink="/menu"
       routerLinkActive="text-blue-500"
       [routerLinkActiveOptions]="{ exact: true }"
-      >Menú</a
-    >
-    <a href="#">Contacto</a>
+      ><img src="../../../assets/icon/menu.png" alt="Menu Icon"
+    /></a>
+    <a href="#"
+      ><img src="../../../assets/icon/contact.png" alt="Contact Icon"
+    /></a>
     <a href="#"
       ><img src="../../../assets/icon/reservation.png" alt="Reservation Icon"
     /></a>
