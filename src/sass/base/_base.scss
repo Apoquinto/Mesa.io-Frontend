@@ -9,20 +9,14 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; //*1rem = 10px
 }
 
 body {
   box-sizing: border-box;
-  color: "#333333";
-  background: "#f3f3f3";
+
+  color: $colorBlackFont;
+  background: $colorBackground;
+
   font-family: "inter", sans-serif;
 }
-
-.nav-container {
-  width: 100%;
-  height: 18rem;
-  background: blue;
-}
-
-/*# sourceMappingURL=style.css.map */
