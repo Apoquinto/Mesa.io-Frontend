@@ -24,6 +24,28 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #808080;
+  border-radius: 2rem;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 1;
+}
+
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
@@ -63,6 +85,7 @@ body {
 .btn,
 .btn:link,
 .btn:visited {
+  cursor: pointer;
   display: inline-block;
   font-size: 2rem;
   padding: 1.6rem 3.2rem;
@@ -72,7 +95,6 @@ body {
   /*Put transition on original "state"*/
   transition: all 0.5s; /*Animation*/
   border: none;
-  cursor: pointer;
 }
 
 .btn--full:link,
