@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
   selector: 'app-loginclient',
   templateUrl: './loginclient.component.html',
 })
-export class LoginclientComponent {
-
-}
+export class LoginclientComponent {}
