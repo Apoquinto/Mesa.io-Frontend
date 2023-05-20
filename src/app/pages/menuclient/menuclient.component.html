@@ -1,42 +1,32 @@
-<app-bannermenu></app-bannermenu>
-<div class="flex justify-center">
-  <ul class="w-80">
-    <ul class="space-y-3 text-sm" style="margin-top: 20px">
-      <li class="flex space-x-3">
-        <button
-          type="button"
-          class="w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
-        >
-          Desayuno
-        </button>
-      </li>
+<div class="menu-container">
+  <div class="menu-container__sub">
+    <div class="hero-img-box">
+      <picture>
+        <source srcset="../../../assets/img/hero.webp" type="image/webp" />
+        <source srcset="../../../assets/img/hero-min.png" type="image/png" />
 
-      <li class="flex space-x-3">
-        <button
-          type="button"
-          class="w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
-        >
-          Mexicana
-        </button>
-      </li>
+        <img
+          src="img/hero.webp"
+          alt="Woman eating food, meals in store container, and food bowls on a table"
+          class="hero-img"
+        />
+      </picture>
+    </div>
 
-      <li class="flex space-x-3">
-        <button
-          type="button"
-          class="w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
-        >
-          Comidas
-        </button>
-      </li>
+    <div class="menu-container__menu">
+      <h3 class="heading-tertiary">Nuestro menú</h3>
 
-      <li class="flex space-x-3">
-        <button
-          type="button"
-          class="w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
-        >
-          Entradas
-        </button>
-      </li>
-    </ul>
-  </ul>
+      <ul class="menu-list">
+        <li class="menu-list__item">
+          <a href="#" target="_self">Desayunos </a>
+        </li>
+        <li class="menu-list__item">
+          <a href="#" target="_self">Entradas </a>
+        </li>
+        <li class="menu-list__item"><a href="#" target="_self"> Bebidas</a></li>
+        <li class="menu-list__item"><a href="#" target="_self"> Comidas</a></li>
+        <li class="menu-list__item"><a href="#" target="_self"> Postres</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
