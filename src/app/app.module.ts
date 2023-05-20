@@ -11,6 +11,10 @@ import { ComponentFooterComponent } from './layouts/footerclient/footerclient.co
 import { LoginclientComponent } from './components/loginclient/loginclient.component';
 import { SignupclientComponent } from './components/signupclient/signupclient.component';
 import { ReservationclientComponent } from './pages/reservationclient/reservationclient.component';
+import { AdminnavComponent } from './layouts/adminnav/adminnav.component';
+import { MicrocajaComponent } from './pages/microcaja/microcaja.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,8 +27,10 @@ import { ReservationclientComponent } from './pages/reservationclient/reservatio
     LoginclientComponent,
     SignupclientComponent,
     ReservationclientComponent,
+    AdminnavComponent,
+    MicrocajaComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],

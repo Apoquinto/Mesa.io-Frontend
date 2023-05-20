@@ -1,0 +1,41 @@
+<div class="caja-container">
+  <section class="caja-column">
+    <form #dateForm="ngForm" (ngSubmit)="submitForm(dateForm)">
+      <div class="caja-input">
+        <span class="label">Desde</span>
+        <input
+          type="date"
+          [value]="fromDate"
+          name="from"
+          [(ngModel)]="fromDate"
+        />
+      </div>
+
+      <div class="caja-input">
+        <span class="label">Hasta</span>
+        <input type="date" [value]="toDate" name="to" [(ngModel)]="toDate" />
+      </div>
+      <button type="submit">Buscar</button>
+    </form>
+  </section>
+  <section class="caja-column">
+    <div id="results-header">
+      <select [(ngModel)]="selectedOption" (change)="onCategoryChange()">
+        <option *ngFor="let option of options" [value]="option.value">
+          {{ option.label }}
+        </option>
+      </select>
+    </div>
+    <div id="results">
+      <div *ngIf="actualFilter.length > 0; else noItems">
+        <ul *ngFor="let order of actualFilter">
+          {{
+            order.name
+          }}
+        </ul>
+      </div>
+
+      <ng-template #noItems>Vaya, parece que no han comprado aun </ng-template>
+    </div>
+  </section>
+</div>

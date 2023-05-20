@@ -1,0 +1,20 @@
+.caja-container {
+  display: flex;
+}
+
+.caja-column {
+  flex: 1;
+}
+
+.caja-column:first-child {
+  margin-right: 10px;
+}
+
+.caja-input {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  margin-left: 10px;
+}
