@@ -15,6 +15,10 @@ import { ReservationclientCreateComponent } from './pages/reservationclient-crea
 import { ReservationclientReserveComponent } from './pages/reservationclient-reserve/reservationclient-reserve.component';
 import { ReservationclientConfirmComponent } from './pages/reservationclient-confirm/reservationclient-confirm.component';
 import { MenuclientlistComponent } from './pages/menuclientlist/menuclientlist.component';
+import { AdminnavComponent } from './layouts/adminnav/adminnav.component';
+import { MicrocajaComponent } from './pages/microcaja/microcaja.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,8 @@ import { MenuclientlistComponent } from './pages/menuclientlist/menuclientlist.c
     ReservationclientReserveComponent,
     ReservationclientConfirmComponent,
     MenuclientlistComponent,
+    AdminnavComponent,
+    MicrocajaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
