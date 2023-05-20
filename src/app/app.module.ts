@@ -11,10 +11,10 @@ import { ComponentFooterComponent } from './layouts/footerclient/footerclient.co
 import { LoginclientComponent } from './components/loginclient/loginclient.component';
 import { SignupclientComponent } from './components/signupclient/signupclient.component';
 import { ReservationclientComponent } from './pages/reservationclient/reservationclient.component';
-import { AdminnavComponent } from './layouts/adminnav/adminnav.component';
-import { MicrocajaComponent } from './pages/microcaja/microcaja.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { ReservationclientCreateComponent } from './pages/reservationclient-create/reservationclient-create.component';
+import { ReservationclientReserveComponent } from './pages/reservationclient-reserve/reservationclient-reserve.component';
+import { ReservationclientConfirmComponent } from './pages/reservationclient-confirm/reservationclient-confirm.component';
+import { MenuclientlistComponent } from './pages/menuclientlist/menuclientlist.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +27,10 @@ import { HttpClientModule } from '@angular/common/http';
     LoginclientComponent,
     SignupclientComponent,
     ReservationclientComponent,
-    AdminnavComponent,
-    MicrocajaComponent,
+    ReservationclientCreateComponent,
+    ReservationclientReserveComponent,
+    ReservationclientConfirmComponent,
+    MenuclientlistComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
