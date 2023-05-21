@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import orders from 'src/app/Interfaces/orders';
 import { MicrocajaService } from 'src/app/services/microcaja.service';
 import rawOrders from 'src/app/Interfaces/rawOrders';
+
+
 @Component({
   selector: 'app-microcaja',
   templateUrl: './microcaja.component.html',
@@ -53,6 +55,8 @@ export class MicrocajaComponent implements OnInit {
     this.fromDate = this.toDate = `${year}-${month}-${day}`;
   }
 
+  
+
 
   getOrders(form: NgForm) {
     this.cajaService.getOrders(form).subscribe(
@@ -66,9 +70,6 @@ export class MicrocajaComponent implements OnInit {
       }
     );
   }
-
-
-
 
   submitForm(form: NgForm) {
     const from = new Date(form.value.from);
@@ -94,6 +95,14 @@ export class MicrocajaComponent implements OnInit {
 
     console.log(this.actualFilter);
   }
+
+  printPDF(){
+    
+  }
+
+  // getPdf(){
+  //   this.cajaService.crearPDF(this.actualFilter);
+  // }
 
 
 }

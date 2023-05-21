@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class MicrocajaService extends HttpService {
+  
 
 
 
@@ -31,11 +32,6 @@ export class MicrocajaService extends HttpService {
 
 
 
-//    getOrders(): Observable<orders[]>{
-//     return this.get<rawOrders[]>('/orders').pipe(
-//       map((rawOrders: rawOrders[]) => this.transformData(rawOrders))
-//     )
-//  };
 
 getOrders(dateForm: NgForm): Observable<orders[]> {
   return this.post(
@@ -46,7 +42,6 @@ getOrders(dateForm: NgForm): Observable<orders[]> {
     map((rawOrders: any) => this.transformData(rawOrders))
   );
 }
-
 
 
   transformData(rawOrders: rawOrders[]): orders[] {
@@ -62,9 +57,6 @@ getOrders(dateForm: NgForm): Observable<orders[]> {
   }
   
 
-
-
-
   getSales(dateForm: NgForm) {
     return this.post(
      `/orders/date`,  { 
@@ -74,5 +66,9 @@ getOrders(dateForm: NgForm): Observable<orders[]> {
     ).pipe(map((orders) => {}));
   }
 
+  printPDF(){
+    
+  }
+ 
 
 }

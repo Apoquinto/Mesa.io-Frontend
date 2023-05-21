@@ -1,7 +1,23 @@
-<div *ngFor="let product of getToBuy()">
-  <p>{{ product.name }}</p>
-  <p>{{ product.price }} * {{ product.quantity }}</p>
-  <button (click)="onReduce(product)">X</button>
+
+<div class="container">
+  <div class="products">
+    <ng-container *ngFor="let product of getToBuy()">
+      <div class="dish">
+        <span class="name">{{ product.name }}</span>
+
+        <div class="right">
+          <span class="prices"> $ {{ product.price }} x {{ product.quantity }}</span>
+          <button class="xbtn" (click)="onReduce(product)">X</button>
+        </div>
+      
+      </div>
+
+    </ng-container>
+  </div>
+
+  <span class="total">Total a pagar $ {{ totalForBuy }}</span>
+  <button class="pay" (click)="toPay()">Pagar</button>
+  
 </div>
-<p>Total a pagar {{ totalForBuy }}</p>
-<button (click)="toPay()">Pagar</button>
+
+

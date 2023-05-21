@@ -1,0 +1,103 @@
+/* .container {
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  .container div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .container span {
+    margin: 0;
+  }
+  
+  .container button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .container button:hover {
+    background-color: darkred;
+  } */
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+  .products{
+    flex: 1;
+    padding: 10px;
+    width: 70%;
+  }
+  
+  .dish {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    /* background-color: #783232; */
+    padding: 10px;
+    
+  }
+
+  .name{
+    font-weight:800;
+    font-style:normal;
+    font-size: large;
+  }
+
+  .prices{
+    font-weight:600;
+    font-style:normal;
+    font-size:x-large;
+  }
+
+  .xbtn{
+    font-weight:bolder;
+    font-style:normal;
+    font-size:x-large
+  }
+  
+  .name,
+  .prices,
+  button {
+    margin: 5px;
+  }
+  
+  .total {
+    font-size: large;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .pay{
+    font-size: x-large;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  button {
+    margin-top: 10px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #cc0000;
+  }
