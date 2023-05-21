@@ -15,25 +15,39 @@
         <span class="label">Hasta</span>
         <input type="date" [value]="toDate" name="to" [(ngModel)]="toDate" />
       </div>
-      <button type="submit">Buscar</button>
+      <button class="btnSubmit" type="submit">Buscar</button>
     </form>
   </section>
   <section class="caja-column">
     <div id="results-header">
       <select [(ngModel)]="selectedOption" (change)="onCategoryChange()">
+        <option value="">Todas las categorias</option>
         <option *ngFor="let option of options" [value]="option.value">
           {{ option.label }}
         </option>
       </select>
     </div>
-    <div id="results">
-      <div *ngIf="actualFilter.length > 0; else noItems">
-        <ul *ngFor="let order of actualFilter">
-          {{
-            order.name
-          }}
-        </ul>
+
+    <div id="results" >
+      <div *ngIf="actualFilter.length > 0; else noItems" class="orders">
+        <ng-container *ngFor="let order of actualFilter"  >
+
+          <div class="item">
+            <div class="left-column">
+              <span class="name">{{ order.name }}</span>
+              <span class="amount">Cantidad: {{ order.amount }}</span>
+              <span class="idOrder">Orden ID: {{ order.id }}</span>
+            </div>
+            <div class="right-column">
+              <span class="price">$ {{ order.price }}</span>
+              <span class="total-price">Total: $ {{ order.totalPrice }}</span>
+            </div>
+          </div>
+
+        
+        </ng-container>
       </div>
+      
 
       <ng-template #noItems>Vaya, parece que no han comprado aun </ng-template>
     </div>
