@@ -14,6 +14,7 @@ import { ReservationclientComponent } from './pages/reservationclient/reservatio
 import { ReservationclientCreateComponent } from './pages/reservationclient-create/reservationclient-create.component';
 import { ReservationclientConfirmComponent } from './pages/reservationclient-confirm/reservationclient-confirm.component';
 import { MenuclientlistComponent } from './pages/menuclientlist/menuclientlist.component';
+import { DragdropmenuComponent } from './pages/dragdropmenu/dragdropmenu.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MenuclientlistComponent } from './pages/menuclientlist/menuclientlist.c
     ReservationclientCreateComponent,
     ReservationclientConfirmComponent,
     MenuclientlistComponent,
+    DragdropmenuComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
