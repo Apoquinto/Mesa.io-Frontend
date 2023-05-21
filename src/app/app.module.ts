@@ -19,7 +19,6 @@ import { AdminnavComponent } from './layouts/adminnav/adminnav.component';
 import { MicrocajaComponent } from './pages/microcaja/microcaja.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { ShopComponent } from './components/shop/shop.component';
 import { MenubuilderComponent } from './components/menubuilder/menubuilder.component';
 
@@ -41,14 +40,9 @@ import { MenubuilderComponent } from './components/menubuilder/menubuilder.compo
     MicrocajaComponent,
     ShopComponent,
     MenubuilderComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
     DragdropmenuComponent,
   ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],
