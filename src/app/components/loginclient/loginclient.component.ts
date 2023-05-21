@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -12,12 +13,18 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginclientComponent {
   username: string = '';
   password: string = '';
-  constructor(private loginService: AuthService) {}
+  constructor(private loginService: AuthService, private router: Router) {}
 
   onSubmit() {
-    this.loginService.login({
-      username: this.username,
-      password: this.password,
-    });
+    this.loginService
+      .login({
+        username: this.username,
+        password: this.password,
+      })
+      .subscribe((result) => {
+        if (result) {
+          this.router.navigate(['home']);
+        }
+      });
   }
 }

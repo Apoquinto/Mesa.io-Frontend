@@ -10,8 +10,9 @@ export class EmailerService extends HttpService {
   }
 
   sendEmail() {
+    console.log(localStorage.getItem('email'));
     this.post('/email', {
       email: localStorage.getItem('email'),
-    });
+    }).subscribe();
   }
 }

@@ -1,7 +1,7 @@
 <div class="nav-container">
   <!--*Logo-->
   <a
-    routerLink="/"
+    routerLink="/home"
     routerLinkActive="text-blue-500"
     [routerLinkActiveOptions]="{ exact: true }"
     aria-current="page"
@@ -10,11 +10,9 @@
     ><img src="../../../assets/icon/restaurant.png" alt="Logo MesaIo" />
     <p>MesaIo</p></a
   >
-
-  <!--*Navigation-->
   <nav>
     <a
-      routerLink="/"
+      routerLink="/home"
       routerLinkActive="text-blue-500"
       [routerLinkActiveOptions]="{ exact: true }"
       aria-current="page"
@@ -26,16 +24,15 @@
       [routerLinkActiveOptions]="{ exact: true }"
       ><img src="../../../assets/icon/menu.png" alt="Menu Icon"
     /></a>
+
     <a
       routerLink="/login"
       routerLinkActive="text-blue-500"
       [routerLinkActiveOptions]="{ exact: true }"
       ><img src="../../../assets/icon/login.png" alt="Login Icon"
     /></a>
-    <a
-      ><img src="../../../assets/icon/reservation.png" alt="Reservation Icon"
-    /></a>
-    <a href="#" routerLink="/shop"
+
+    <a routerLink="/shop"
       ><img src="../../../assets/icon/cart.png" alt="Cart Icon"
     /></a>
   </nav>

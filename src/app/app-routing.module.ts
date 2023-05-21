@@ -6,14 +6,19 @@ import { LoginclientComponent } from './components/loginclient/loginclient.compo
 import { SignupclientComponent } from './components/signupclient/signupclient.component';
 import { MenuclientlistComponent } from './pages/menuclientlist/menuclientlist.component';
 import { ShopComponent } from './components/shop/shop.component';
+import { UserGuard } from './guards/user.guard';
+import { MicrocajaComponent } from './pages/microcaja/microcaja.component';
+import { RoleGuard } from './guards/role.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeclientComponent },
+  { path: 'home', component: HomeclientComponent },
   { path: 'menu', component: MenuclientComponent },
   { path: 'login', component: LoginclientComponent },
   { path: 'signup', component: SignupclientComponent },
   { path: 'menulist/:id', component: MenuclientlistComponent },
-  { path: 'shop', component: ShopComponent },
+  { path: 'shop', component: ShopComponent, canActivate: [UserGuard] },
+  { path: 'homeAdmin', component: MicrocajaComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 
 @NgModule({

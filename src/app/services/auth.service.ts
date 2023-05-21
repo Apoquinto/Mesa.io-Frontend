@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, map, of } from 'rxjs';
 import * as bcrypt from 'bcryptjs';
 import AcessToken from '../Interfaces/token';
 
@@ -27,22 +27,27 @@ enum Roles {
 export class AuthService extends HttpService {
   private rounds = 5;
   private tokenKey = 'access_token';
-  // TODO: Replace mockup with enviroments values
-  private loggedIn = new BehaviorSubject<boolean>(false);
+  private isLogged = new BehaviorSubject<boolean>(false);
 
   constructor() {
     super();
   }
 
-  // TODO: Replace mockup with real implementation
   login(credentials: Credentials) {
-    this.post<AcessToken>('/auth/signIn', {
+    return this.post<AcessToken>('/auth/signIn', {
       username: credentials.username,
       password: credentials.password,
-    }).subscribe((token) => {
-      localStorage.setItem('email', token.email);
-      localStorage.setItem(this.tokenKey, token.access_token);
-    });
+    }).pipe(
+      map((token) => {
+        localStorage.setItem('email', token.email);
+        sessionStorage.setItem(this.tokenKey, token.access_token);
+        this.isLogged.next(true);
+        return true; // Indicar éxito de inicio de sesión si es necesario
+      }),
+      catchError((error) => {
+        return of(false); // Devolver un Observable con valor false para indicar que el inicio de sesión falló
+      })
+    );
   }
 
   signUp(credentials: SignCredentials) {
@@ -63,14 +68,13 @@ export class AuthService extends HttpService {
   }
 
   logout() {
-    if (this.loggedIn.value) {
-      localStorage.removeItem(this.tokenKey);
-      this.loggedIn.next(false);
-    }
+    sessionStorage.removeItem(this.tokenKey);
+    localStorage.removeItem('email');
+    this.isLogged.next(false);
   }
 
   isLoggedIn(): Observable<boolean> {
-    return this.loggedIn;
+    return this.isLogged.asObservable();
   }
 
   getToken(): string | null {
