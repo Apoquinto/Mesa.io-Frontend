@@ -42,6 +42,7 @@ export class HttpService {
   }
 
   put(url: string, body: any) {
+    console.log(body);
     return this.httpClient
       .put(`${this.baseUrl}${url}`, body, { headers: this.headers })
       .pipe(

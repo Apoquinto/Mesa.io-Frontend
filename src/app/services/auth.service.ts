@@ -1,44 +1,67 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
 import { BehaviorSubject, Observable } from 'rxjs';
+import * as bcrypt from 'bcryptjs';
 
 // TODO: Replace mockup interface with real interface
 interface Credentials {
-  username: string,
-  password: string
+  username: string;
+  password: string;
+}
+
+interface SignCredentials {
+  username: string;
+  email: string;
+  password: string;
 }
 
 enum Roles {
   Admin,
-  Visitor
+  Visitor,
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService extends HttpService {
+  private rounds = 5;
   private tokenKey = 'access_token';
   // TODO: Replace mockup with enviroments values
   private loggedIn = new BehaviorSubject<boolean>(false);
 
-  constructor() { 
+  constructor() {
     super();
   }
 
   // TODO: Replace mockup with real implementation
   login(credentials: Credentials) {
-    localStorage.setItem(this.tokenKey, 'This is a dummy token')
+    this.post('/auth/signIn', {
+      username: credentials.username,
+      password: credentials.password,
+    });
+    localStorage.setItem(this.tokenKey, 'This is a dummy token');
     this.loggedIn.next(true);
   }
 
+  signUp(credentials: SignCredentials) {
+    bcrypt.hash(credentials.password, this.rounds, (err, hash) => {
+      this.post('/auth/signUp', {
+        password: hash,
+        email: credentials.email,
+        username: credentials.username,
+      }).subscribe((user) => {
+        console.log(user);
+      });
+    });
+  }
+
   logout() {
-    if(this.loggedIn.value) {
+    if (this.loggedIn.value) {
       localStorage.removeItem(this.tokenKey);
       this.loggedIn.next(false);
     }
   }
 
-  
   isLoggedIn(): Observable<boolean> {
     return this.loggedIn;
   }
