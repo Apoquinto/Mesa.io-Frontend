@@ -537,6 +537,7 @@ strong {
   font-size: 1.8rem;
 }
 .menu-container__list .plate .icon-plus {
+  cursor: pointer;
   font-size: 4.8rem;
   color: #333;
 }
