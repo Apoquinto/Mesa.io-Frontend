@@ -21,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ShopComponent } from './components/shop/shop.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
