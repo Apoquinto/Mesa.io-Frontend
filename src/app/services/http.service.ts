@@ -11,6 +11,9 @@ export class HttpService {
   private baseUrl = 'http://localhost:3000';
   private headers = new HttpHeaders({
     'Content-Type': 'application/json',
+    security_token: sessionStorage.getItem('access_token')
+      ? sessionStorage.getItem('access_token')!
+      : '',
   });
 
   constructor() {}
