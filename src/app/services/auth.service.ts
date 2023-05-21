@@ -40,6 +40,7 @@ export class AuthService extends HttpService {
       username: credentials.username,
       password: credentials.password,
     }).subscribe((token) => {
+      localStorage.setItem('email', token.email);
       localStorage.setItem(this.tokenKey, token.access_token);
     });
   }
@@ -50,9 +51,14 @@ export class AuthService extends HttpService {
         password: hash,
         email: credentials.email,
         username: credentials.username,
-      }).subscribe((user) => {
-        console.log(user);
-      });
+      }).subscribe(
+        (user) => {
+          alert('Regristro Exitoso');
+        },
+        (err) => {
+          alert('Upps... Intenta mas tarde');
+        }
+      );
     });
   }
 

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import Products from 'src/app/Interfaces/products';
+import { EmailerService } from 'src/app/services/emailer.service';
+
 import { ShopService } from 'src/app/services/shop.service';
 
 @Component({
@@ -7,7 +9,10 @@ import { ShopService } from 'src/app/services/shop.service';
   templateUrl: './shop.component.html',
 })
 export class ShopComponent {
-  constructor(private shopService: ShopService) {
+  constructor(
+    private shopService: ShopService,
+    private emailService: EmailerService
+  ) {
     this.calculateTotal();
   }
   totalForBuy!: number;
@@ -35,6 +40,7 @@ export class ShopComponent {
 
   toPay() {
     this.shopService.payProducts();
+    this.emailService.sendEmail();
     this.calculateTotal();
   }
 
