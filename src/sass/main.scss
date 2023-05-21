@@ -1,14 +1,14 @@
-@import "abstract/variables.scss";
+@import "abstract/variables";
 
 @import "base/base";
 
-@import "componnets/form.scss";
+@import "componnets/form";
 
 @import "layout/footer";
 @import "layout/header";
 @import "layout/hero";
 @import "layout/navigation";
 
-@import "pages/microcaja";
+@import "pages/drag_drop";
 @import "pages/menu";
 @import "pages/reservation";
