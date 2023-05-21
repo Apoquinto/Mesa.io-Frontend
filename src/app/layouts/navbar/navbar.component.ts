@@ -8,12 +8,16 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavbarComponent implements OnDestroy {
   isLoggedIn: boolean = false;
+  userType: string = 'user';
   private subscriptions: Subscription[] = [];
 
   constructor(private loginService: AuthService) {
     this.subscriptions.push(
       this.loginService.isLoggedIn().subscribe((loggedIn) => {
         this.isLoggedIn = loggedIn;
+      }),
+      this.loginService.roleType().subscribe((role) => {
+        this.userType = role;
       })
     );
   }
@@ -23,7 +27,6 @@ export class NavbarComponent implements OnDestroy {
   }
 
   onLogOut() {
-    alert('Seguro que quieres cerrar sesion?');
     this.loginService.logout();
   }
 }

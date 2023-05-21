@@ -11,12 +11,16 @@ import { MicrocajaComponent } from './pages/microcaja/microcaja.component';
 import { RoleGuard } from './guards/role.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeclientComponent },
-  { path: 'menu', component: MenuclientComponent },
+  { path: 'home', component: HomeclientComponent, canActivate: [RoleGuard] },
+  { path: 'menu', component: MenuclientComponent, canActivate: [RoleGuard] },
   { path: 'login', component: LoginclientComponent },
   { path: 'signup', component: SignupclientComponent },
   { path: 'menulist/:id', component: MenuclientlistComponent },
-  { path: 'shop', component: ShopComponent, canActivate: [UserGuard] },
+  {
+    path: 'shop',
+    component: ShopComponent,
+    canActivate: [UserGuard, RoleGuard],
+  },
   { path: 'homeAdmin', component: MicrocajaComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

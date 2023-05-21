@@ -28,6 +28,7 @@ export class AuthService extends HttpService {
   private rounds = 5;
   private tokenKey = 'access_token';
   private isLogged = new BehaviorSubject<boolean>(false);
+  private userRole = new BehaviorSubject<string>('user');
 
   constructor() {
     super();
@@ -42,6 +43,7 @@ export class AuthService extends HttpService {
         localStorage.setItem('email', token.email);
         sessionStorage.setItem(this.tokenKey, token.access_token);
         this.isLogged.next(true);
+        this.userRole.next(token.role);
         return true; // Indicar éxito de inicio de sesión si es necesario
       }),
       catchError((error) => {
@@ -70,11 +72,17 @@ export class AuthService extends HttpService {
   logout() {
     sessionStorage.removeItem(this.tokenKey);
     localStorage.removeItem('email');
+    localStorage.removeItem('role');
     this.isLogged.next(false);
+    this.userRole.next('user');
   }
 
   isLoggedIn(): Observable<boolean> {
     return this.isLogged.asObservable();
+  }
+
+  roleType(): Observable<string> {
+    return this.userRole.asObservable();
   }
 
   getToken(): string | null {

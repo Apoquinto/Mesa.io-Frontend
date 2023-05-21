@@ -1,4 +1,44 @@
-<div class="nav-container">
+<div class="nav-container" *ngIf="userType === 'user'">
+  <!--*Logo-->
+  <a
+    routerLink="/home"
+    routerLinkActive="text-blue-500"
+    [routerLinkActiveOptions]="{ exact: true }"
+    aria-current="page"
+    class="logo-link"
+    href="#"
+    ><img src="../../../assets/icon/restaurant.png" alt="Logo MesaIo" />
+    <p>MesaIo</p></a
+  >
+  <nav>
+    <a
+      routerLink="/home"
+      routerLinkActive="text-blue-500"
+      [routerLinkActiveOptions]="{ exact: true }"
+      aria-current="page"
+      ><img src="../../../assets/icon/home.png" alt="Home Icon"
+    /></a>
+    <a
+      routerLink="/menu"
+      routerLinkActive="text-blue-500"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ><img src="../../../assets/icon/menu.png" alt="Menu Icon"
+    /></a>
+
+    <a
+      routerLink="/login"
+      routerLinkActive="text-blue-500"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ><img src="../../../assets/icon/login.png" alt="Login Icon"
+    /></a>
+
+    <a routerLink="/shop"
+      ><img src="../../../assets/icon/cart.png" alt="Cart Icon"
+    /></a>
+  </nav>
+</div>
+
+<div class="nav-container" *ngIf="userType === 'admin'">
   <!--*Logo-->
   <a
     routerLink="/home"

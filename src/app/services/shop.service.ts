@@ -43,7 +43,7 @@ export class ShopService extends HttpService {
       this.post('/orders', {
         userId: '1',
         dishId: dish.id,
-        amount: dish.price,
+        amount: dish.quantity,
       }).subscribe();
       return dish.name !== dish.name;
     });
