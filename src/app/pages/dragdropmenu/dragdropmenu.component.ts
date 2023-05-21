@@ -73,13 +73,23 @@ export class DragdropmenuComponent implements OnInit {
     const list2 = document.getElementById('list2');
     const list1 = document.getElementById('list1');
 
-    if (list2) {
+    if (list2 && list1) {
       list2.addEventListener('dragover', (e) => e.preventDefault());
       list2.addEventListener('drop', (e) => {
         e.preventDefault();
         const draggingItem = list1?.querySelector<HTMLElement>('.dragging');
         if (draggingItem) {
           list2.appendChild(draggingItem);
+          draggingItem.classList.remove('dragging');
+        }
+      });
+
+      list1.addEventListener('dragover', (e) => e.preventDefault());
+      list1.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const draggingItem = list2?.querySelector<HTMLElement>('.dragging');
+        if (draggingItem) {
+          list1.appendChild(draggingItem);
           draggingItem.classList.remove('dragging');
         }
       });
