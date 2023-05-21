@@ -28,9 +28,9 @@ export class HttpService {
       );
   }
 
-  post(url: string, body: any) {
+  post<T>(url: string, body: any) {
     return this.httpClient
-      .post(`${this.baseUrl}${url}`, body, { headers: this.headers })
+      .post<T>(`${this.baseUrl}${url}`, body, { headers: this.headers })
       .pipe(
         catchError((error) => {
           return throwError(

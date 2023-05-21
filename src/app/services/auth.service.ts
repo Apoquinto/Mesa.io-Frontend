@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import * as bcrypt from 'bcryptjs';
+import access_token from '../Interfaces/token';
 
 // TODO: Replace mockup interface with real interface
 interface Credentials {
@@ -35,12 +36,12 @@ export class AuthService extends HttpService {
 
   // TODO: Replace mockup with real implementation
   login(credentials: Credentials) {
-    this.post('/auth/signIn', {
+    this.post<access_token>('/auth/signIn', {
       username: credentials.username,
       password: credentials.password,
+    }).subscribe((token) => {
+      localStorage.setItem(this.tokenKey, token.access_token);
     });
-    localStorage.setItem(this.tokenKey, 'This is a dummy token');
-    this.loggedIn.next(true);
   }
 
   signUp(credentials: SignCredentials) {
