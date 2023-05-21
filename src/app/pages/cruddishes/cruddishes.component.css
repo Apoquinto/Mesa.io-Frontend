@@ -1,0 +1,43 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  min-width: 150px;
+}
+
+.card-header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.description {
+  margin-top: 5px;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.edit-button,
+.delete-button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #999;
+}

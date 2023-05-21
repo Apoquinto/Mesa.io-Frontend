@@ -14,13 +14,15 @@ import { ReservationclientComponent } from './pages/reservationclient/reservatio
 import { ReservationclientCreateComponent } from './pages/reservationclient-create/reservationclient-create.component';
 import { ReservationclientConfirmComponent } from './pages/reservationclient-confirm/reservationclient-confirm.component';
 import { MenuclientlistComponent } from './pages/menuclientlist/menuclientlist.component';
-import { DragdropmenuComponent } from './pages/dragdropmenu/dragdropmenu.component';
+
 import { AdminnavComponent } from './layouts/adminnav/adminnav.component';
 import { MicrocajaComponent } from './pages/microcaja/microcaja.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ShopComponent } from './components/shop/shop.component';
 import { MenubuilderComponent } from './components/menubuilder/menubuilder.component';
+import { CRUDdishesComponent } from './pages/cruddishes/cruddishes.component';
+import { DishViewComponent } from './components/dish-view/dish-view.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { MenubuilderComponent } from './components/menubuilder/menubuilder.compo
     MicrocajaComponent,
     ShopComponent,
     MenubuilderComponent,
-    DragdropmenuComponent,
+    CRUDdishesComponent,
+    DishViewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

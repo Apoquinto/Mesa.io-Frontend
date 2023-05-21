@@ -9,6 +9,8 @@ import { ShopComponent } from './components/shop/shop.component';
 import { UserGuard } from './guards/user.guard';
 import { MicrocajaComponent } from './pages/microcaja/microcaja.component';
 import { RoleGuard } from './guards/role.guard';
+import { DishViewComponent } from './components/dish-view/dish-view.component';
+import { CRUDdishesComponent } from './pages/cruddishes/cruddishes.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeclientComponent, canActivate: [RoleGuard] },
@@ -25,7 +27,18 @@ const routes: Routes = [
     component: ShopComponent,
     canActivate: [UserGuard, RoleGuard],
   },
-  { path: 'homeAdmin', component: MicrocajaComponent },
+  {
+    path: 'homeAdmin',
+    component: MicrocajaComponent,
+    canActivate: [RoleGuard],
+  },
+  { path: 'CRUD', component: CRUDdishesComponent, canActivate: [RoleGuard] },
+  {
+    path: 'createDish',
+    component: DishViewComponent,
+    canActivate: [RoleGuard],
+  },
+  { path: 'edit/:id', component: DishViewComponent, canActivate: [RoleGuard] },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

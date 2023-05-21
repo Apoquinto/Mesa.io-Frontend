@@ -41,7 +41,7 @@
 <div class="nav-container" *ngIf="userType === 'admin'">
   <!--*Logo-->
   <a
-    routerLink="/home"
+    routerLink="/homeAdmin"
     routerLinkActive="text-blue-500"
     [routerLinkActiveOptions]="{ exact: true }"
     aria-current="page"
@@ -52,14 +52,14 @@
   >
   <nav>
     <a
-      routerLink="/home"
+      routerLink="/homeAdmin"
       routerLinkActive="text-blue-500"
       [routerLinkActiveOptions]="{ exact: true }"
       aria-current="page"
       ><img src="../../../assets/icon/home.png" alt="Home Icon"
     /></a>
     <a
-      routerLink="/menu"
+      routerLink="/CRUD"
       routerLinkActive="text-blue-500"
       [routerLinkActiveOptions]="{ exact: true }"
       ><img src="../../../assets/icon/menu.png" alt="Menu Icon"
@@ -70,10 +70,6 @@
       routerLinkActive="text-blue-500"
       [routerLinkActiveOptions]="{ exact: true }"
       ><img src="../../../assets/icon/login.png" alt="Login Icon"
-    /></a>
-
-    <a routerLink="/shop"
-      ><img src="../../../assets/icon/cart.png" alt="Cart Icon"
     /></a>
   </nav>
 </div>
