@@ -4,12 +4,16 @@ import { HomeclientComponent } from './pages/homeclient/homeclient.component';
 import { MenuclientComponent } from './pages/menuclient/menuclient.component';
 import { LoginclientComponent } from './components/loginclient/loginclient.component';
 import { SignupclientComponent } from './components/signupclient/signupclient.component';
+import { MenuclientlistComponent } from './pages/menuclientlist/menuclientlist.component';
+import { ShopComponent } from './components/shop/shop.component';
 
 const routes: Routes = [
   { path: '', component: HomeclientComponent },
   { path: 'menu', component: MenuclientComponent },
   { path: 'login', component: LoginclientComponent },
   { path: 'signup', component: SignupclientComponent },
+  { path: 'menulist/:id', component: MenuclientlistComponent },
+  { path: 'shop', component: ShopComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,7 @@
+<div *ngFor="let product of getToBuy()">
+  <p>{{ product.name }}</p>
+  <p>{{ product.price }} * {{ product.quantity }}</p>
+  <button (click)="onReduce(product)">X</button>
+</div>
+<p>Total a pagar {{ totalForBuy }}</p>
+<button (click)="toPay()">Pagar</button>

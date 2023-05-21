@@ -18,6 +18,8 @@ import { AdminnavComponent } from './layouts/adminnav/adminnav.component';
 import { MicrocajaComponent } from './pages/microcaja/microcaja.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ShopComponent } from './components/shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,15 @@ import { HttpClientModule } from '@angular/common/http';
     MenuclientlistComponent,
     AdminnavComponent,
     MicrocajaComponent,
+    ShopComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ModalModule.forRoot(),
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],

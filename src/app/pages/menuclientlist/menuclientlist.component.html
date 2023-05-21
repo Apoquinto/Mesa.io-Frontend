@@ -1,6 +1,6 @@
 <div class="menu-container">
   <div class="heading">
-    <a href="#">
+    <a href="#" routerLink="/menu">
       <ion-icon class="icon-return" name="arrow-back-outline"></ion-icon>
     </a>
     <h3 class="heading-tertiary">Espaguetti</h3>
@@ -20,63 +20,20 @@
     </div>
 
     <div class="menu-container__list">
-      <div class="flex-column">
+      <div class="flex-column" *ngFor="let dish of dishesForShot">
         <div class="plate">
           <div class="info">
-            <h4>Lorem ipsum dolor sit amet.</h4>
+            <h4>{{ dish.name }}</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-              voluptate voluptatum illo odio magni reprehenderit quia quaerat
-              maxime dolores animi.
+              {{ dish.description }}
             </p>
           </div>
-          <div class="price">$139.50</div>
-          <ion-icon class="icon-plus" name="add-outline"></ion-icon>
-          <div class="image">
-            <img src="../../../assets/img/food.jpg" alt="Plate" />
-          </div>
-        </div>
-        <div class="plate">
-          <div class="info">
-            <h4>Lorem ipsum dolor sit amet.</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-              voluptate voluptatum illo odio magni reprehenderit quia quaerat
-              maxime dolores animi.
-            </p>
-          </div>
-          <div class="price">$139.50</div>
-          <ion-icon class="icon-plus" name="add-outline"></ion-icon>
-          <div class="image">
-            <img src="../../../assets/img/food.jpg" alt="Plate" />
-          </div>
-        </div>
-        <div class="plate">
-          <div class="info">
-            <h4>Lorem ipsum dolor sit amet.</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-              voluptate voluptatum illo odio magni reprehenderit quia quaerat
-              maxime dolores animi.
-            </p>
-          </div>
-          <div class="price">$139.50</div>
-          <ion-icon class="icon-plus" name="add-outline"></ion-icon>
-          <div class="image">
-            <img src="../../../assets/img/food.jpg" alt="Plate" />
-          </div>
-        </div>
-        <div class="plate">
-          <div class="info">
-            <h4>Lorem ipsum dolor sit amet.</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-              voluptate voluptatum illo odio magni reprehenderit quia quaerat
-              maxime dolores animi.
-            </p>
-          </div>
-          <div class="price">$139.50</div>
-          <ion-icon class="icon-plus" name="add-outline"></ion-icon>
+          <div class="price">{{ dish.price }}</div>
+          <ion-icon
+            class="icon-plus"
+            name="add-outline"
+            (click)="onAdd(dish)"
+          ></ion-icon>
           <div class="image">
             <img src="../../../assets/img/food.jpg" alt="Plate" />
           </div>
