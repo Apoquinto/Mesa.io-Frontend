@@ -15,7 +15,11 @@ const routes: Routes = [
   { path: 'menu', component: MenuclientComponent, canActivate: [RoleGuard] },
   { path: 'login', component: LoginclientComponent },
   { path: 'signup', component: SignupclientComponent },
-  { path: 'menulist/:id', component: MenuclientlistComponent },
+  {
+    path: 'menulist/:id',
+    component: MenuclientlistComponent,
+    canActivate: [RoleGuard],
+  },
   {
     path: 'shop',
     component: ShopComponent,

@@ -9,10 +9,12 @@ export class RoleGuard implements CanActivate {
   role: string = 'user';
 
   canActivate(): boolean {
-    if (this.role === 'admin') {
-      this.router.navigate(['/homeAdmin']);
+    this.authService.roleType().subscribe((val) => {
+      if (val === 'admin') {
+        this.router.navigate(['homeAdmin']);
+      }
       return false;
-    }
+    });
 
     return true;
   }

@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ShopComponent } from './components/shop/shop.component';
+import { MenubuilderComponent } from './components/menubuilder/menubuilder.component';
 
 
 
@@ -40,6 +41,7 @@ import { ShopComponent } from './components/shop/shop.component';
     AdminnavComponent,
     MicrocajaComponent,
     ShopComponent,
+    MenubuilderComponent,
   ],
   imports: [
     BrowserModule,
