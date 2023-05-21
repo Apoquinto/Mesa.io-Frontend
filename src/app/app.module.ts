@@ -12,7 +12,6 @@ import { LoginclientComponent } from './components/loginclient/loginclient.compo
 import { SignupclientComponent } from './components/signupclient/signupclient.component';
 import { ReservationclientComponent } from './pages/reservationclient/reservationclient.component';
 import { ReservationclientCreateComponent } from './pages/reservationclient-create/reservationclient-create.component';
-import { ReservationclientReserveComponent } from './pages/reservationclient-reserve/reservationclient-reserve.component';
 import { ReservationclientConfirmComponent } from './pages/reservationclient-confirm/reservationclient-confirm.component';
 import { MenuclientlistComponent } from './pages/menuclientlist/menuclientlist.component';
 import { AdminnavComponent } from './layouts/adminnav/adminnav.component';
@@ -32,7 +31,6 @@ import { HttpClientModule } from '@angular/common/http';
     SignupclientComponent,
     ReservationclientComponent,
     ReservationclientCreateComponent,
-    ReservationclientReserveComponent,
     ReservationclientConfirmComponent,
     MenuclientlistComponent,
     AdminnavComponent,

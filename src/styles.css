@@ -188,6 +188,10 @@ strong {
   font-weight: 500;
 }
 
+.heading-tertiary {
+  text-align: center;
+}
+
 .form-process {
   position: relative;
   display: flex;
@@ -462,6 +466,20 @@ strong {
   height: 100vh;
   background: #f3f3f3;
 }
+.menu-container .heading {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.menu-container .heading .icon-return {
+  cursor: pointer;
+  font-size: 4.8rem;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  left: 2.4rem;
+  transform: translateY(-50%);
+}
 .menu-container__sub {
   width: 90%;
   height: auto;
@@ -501,6 +519,59 @@ strong {
   font-size: 2.4rem;
   text-align: center;
   margin-bottom: 2.4rem;
+}
+.menu-container__list {
+  overflow-y: scroll;
+  width: 72rem;
+  height: 48rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 2.4rem;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+}
+.menu-container__list .flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.menu-container__list .plate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 2.4rem;
+  background: #e0e0e0;
+}
+.menu-container__list .plate .info h4 {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+.menu-container__list .plate .info p {
+  font-size: 1.4rem;
+}
+.menu-container__list .plate .price {
+  font-size: 1.8rem;
+}
+.menu-container__list .plate .icon-plus {
+  cursor: pointer;
+  font-size: 4.8rem;
+  color: #333;
+}
+.menu-container__list .plate .image {
+  overflow: hidden;
+  aspect-ratio: 1;
+  width: 16rem;
+  border-radius: 0.5rem;
+}
+.menu-container__list .plate .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .container__reservation {
