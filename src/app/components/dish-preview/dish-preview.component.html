@@ -1,6 +1,10 @@
 <article class="card">
-  <img src="{{ dish.dishThumbnailURL }}" alt="{{ dish.name }}" />
-  <div>
+  <img
+    class="dish__preview"
+    src="{{ dish.dishThumbnailURL }}"
+    alt="{{ dish.name }}"
+  />
+  <div class="dish__info">
     <h4>{{ dish.name }}</h4>
     <p>{{ dish.description }}</p>
     <p class="price">{{ dish.price }}</p>
