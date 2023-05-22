@@ -1,1 +1,8 @@
-<p>dish-preview works!</p>
+<article class="card">
+  <img src="{{ dish.dishThumbnailURL }}" alt="{{ dish.name }}" />
+  <div>
+    <h4>{{ dish.name }}</h4>
+    <p>{{ dish.description }}</p>
+    <p class="price">{{ dish.price }}</p>
+  </div>
+</article>
