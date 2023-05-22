@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import Dish from 'src/app/Interfaces/dish';
 import { MenulistService } from 'src/app/services/menulist.service';
-import { MicrocajaService } from 'src/app/services/microcaja.service';
 
 @Component({
   selector: 'app-cruddishes',

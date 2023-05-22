@@ -1,13 +1,6 @@
-<div class="card" *ngFor="let dish of dishes.items">
-  <div class="card-header">{{ dish.name }}</div>
-  <div class="card-body">
-    <div class="price">{{ dish.price }}</div>
-    <div class="description">{{ dish.description }}</div>
-    <div class="buttons">
-      <button class="edit-button">Editar</button>
-      <button class="delete-button">Eliminar</button>
-    </div>
-  </div>
-</div>
-
-<button (click)="redirectToPage()">Crear nueva</button>
+<main>
+  <h1>Dishes</h1>
+  <section class="dishes__grid">
+    <dish-preview *ngFor="let dish of dishes" [dish]="dish"></dish-preview>
+  </section>
+</main>

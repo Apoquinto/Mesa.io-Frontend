@@ -23,6 +23,7 @@ import { ShopComponent } from './components/shop/shop.component';
 import { MenubuilderComponent } from './components/menubuilder/menubuilder.component';
 import { CRUDdishesComponent } from './pages/cruddishes/cruddishes.component';
 import { DishViewComponent } from './components/dish-view/dish-view.component';
+import { DishPreviewComponent } from './components/dish-preview/dish-preview.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { DishViewComponent } from './components/dish-view/dish-view.component';
     MenubuilderComponent,
     CRUDdishesComponent,
     DishViewComponent,
+    DishPreviewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

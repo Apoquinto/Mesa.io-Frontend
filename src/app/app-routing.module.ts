@@ -32,7 +32,7 @@ const routes: Routes = [
     component: MicrocajaComponent,
     canActivate: [RoleGuard],
   },
-  { path: 'CRUD', component: CRUDdishesComponent },
+  { path: 'dishes', component: CRUDdishesComponent, canActivate: [RoleGuard] },
   {
     path: 'createDish',
     component: DishViewComponent,

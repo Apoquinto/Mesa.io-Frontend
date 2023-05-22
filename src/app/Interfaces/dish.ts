@@ -7,7 +7,7 @@ export interface Ind_Dish {
   name: string;
   description: string;
   price: number;
-  createdAt: string;
+  dishThumbnailURL: string;
   idsCategories: string[];
   dishThumbnailURL: string;
 }
