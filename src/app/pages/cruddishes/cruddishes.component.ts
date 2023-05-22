@@ -10,11 +10,17 @@ import { MicrocajaService } from 'src/app/services/microcaja.service';
   styleUrls: ['./cruddishes.component.css'],
 })
 export class CRUDdishesComponent {
-  dishes!: Dish[];
+  dishes!: Dish;
 
-  constructor(private menuService: MenulistService, private route: Router) {
+  constructor(private menuService: MenulistService, private router: Router) {
     menuService.getDishes().subscribe((dishes) => {
+      console.log(dishes);
       this.dishes = dishes;
     });
+  }
+  redirectToPage() {
+    // Realizar el redireccionamiento a otra página utilizando el enrutador de Angular
+    // Por ejemplo:
+    this.router.navigate(['/createDish']);
   }
 }

@@ -1,4 +1,4 @@
-<div class="card" *ngFor="let dish of dishes">
+<div class="card" *ngFor="let dish of dishes.items">
   <div class="card-header">{{ dish.name }}</div>
   <div class="card-body">
     <div class="price">{{ dish.price }}</div>
@@ -10,4 +10,4 @@
   </div>
 </div>
 
-<button routerLink="/createDish">Add Dish</button>
+<button (click)="redirectToPage()">Crear nueva</button>

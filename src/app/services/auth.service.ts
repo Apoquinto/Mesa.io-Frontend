@@ -44,7 +44,7 @@ export class AuthService extends HttpService {
         sessionStorage.setItem(this.tokenKey, token.access_token);
         this.isLogged.next(true);
         this.userRole.next(token.role);
-        return true; // Indicar éxito de inicio de sesión si es necesario
+        return of(true); // Indicar éxito de inicio de sesión si es necesario
       }),
       catchError((error) => {
         return of(false); // Devolver un Observable con valor false para indicar que el inicio de sesión falló

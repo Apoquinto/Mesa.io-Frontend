@@ -32,13 +32,11 @@ const routes: Routes = [
     component: MicrocajaComponent,
     canActivate: [RoleGuard],
   },
-  { path: 'CRUD', component: CRUDdishesComponent, canActivate: [RoleGuard] },
+  { path: 'CRUD', component: CRUDdishesComponent },
   {
     path: 'createDish',
     component: DishViewComponent,
-    canActivate: [RoleGuard],
   },
-  { path: 'edit/:id', component: DishViewComponent, canActivate: [RoleGuard] },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 
