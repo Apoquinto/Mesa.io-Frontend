@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
 import { BehaviorSubject, Observable, catchError, map, of } from 'rxjs';
-import * as bcrypt from 'bcryptjs';
+import * as bcrypt from 'bcrypt';
 import AcessToken from '../Interfaces/token';
 
 // TODO: Replace mockup interface with real interface
@@ -39,12 +39,13 @@ export class AuthService extends HttpService {
       username: credentials.username,
       password: credentials.password,
     }).pipe(
-      map((token) => {
+      map((token: any) => {
+        console.log(token);
         localStorage.setItem('email', token.email);
         sessionStorage.setItem(this.tokenKey, token.access_token);
         this.isLogged.next(true);
         this.userRole.next(token.role);
-        return true; // Indicar éxito de inicio de sesión si es necesario
+        return of(true); // Indicar éxito de inicio de sesión si es necesario
       }),
       catchError((error) => {
         return of(false); // Devolver un Observable con valor false para indicar que el inicio de sesión falló
@@ -53,20 +54,19 @@ export class AuthService extends HttpService {
   }
 
   signUp(credentials: SignCredentials) {
-    bcrypt.hash(credentials.password, this.rounds, (err, hash) => {
-      this.post('/auth/signUp', {
-        password: hash,
-        email: credentials.email,
-        username: credentials.username,
-      }).subscribe(
-        (user) => {
-          alert('Regristro Exitoso');
-        },
-        (err) => {
-          alert('Upps... Intenta mas tarde');
-        }
-      );
-    });
+    this.post('/auth/signUp', {
+      password: credentials.password,
+      email: credentials.email,
+      username: credentials.username,
+    }).subscribe(
+      (user) => {
+        console.log(user);
+        alert('Regristro Exitoso');
+      },
+      (err) => {
+        alert('Upps... Intenta mas tarde');
+      }
+    );
   }
 
   logout() {
