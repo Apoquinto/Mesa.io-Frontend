@@ -26,6 +26,7 @@ article .dish__info h4 {
 
 article .dish__info .price {
   margin: 0;
+  color: var(--bs-teal);
   font-weight: 600;
 }
 

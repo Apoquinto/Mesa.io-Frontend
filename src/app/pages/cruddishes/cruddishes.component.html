@@ -1,1 +1,6 @@
-<dish-preview *ngFor="let dish of dishes" [dish]="dish"></dish-preview>
+<main>
+  <h1>Dishes</h1>
+  <section class="dishes__grid">
+    <dish-preview *ngFor="let dish of dishes" [dish]="dish"></dish-preview>
+  </section>
+</main>
