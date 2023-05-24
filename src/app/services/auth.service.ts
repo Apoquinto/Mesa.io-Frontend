@@ -37,7 +37,7 @@ export class AuthService extends HttpService {
       username: credentials.username,
       password: credentials.password,
     }).pipe(
-      map((token: any) => {
+      map((token) => {
         localStorage.setItem('email', token.email);
         sessionStorage.setItem(this.tokenKey, token.access_token);
         this.isLogged.next(true);

@@ -12,11 +12,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class MicrocajaService extends HttpService {
-
-
-
   getCategories() {
-    return this.get<categories[]>('/categories', {}).pipe(
+    return this.get<categories[]>('/categories').pipe(
       map((categories) => {
         let options: option[] = [];
 
@@ -29,50 +26,37 @@ export class MicrocajaService extends HttpService {
     );
   }
 
+  //    getOrders(): Observable<orders[]>{
+  //     return this.get<rawOrders[]>('/orders').pipe(
+  //       map((rawOrders: rawOrders[]) => this.transformData(rawOrders))
+  //     )
+  //  };
 
-
-//    getOrders(): Observable<orders[]>{
-//     return this.get<rawOrders[]>('/orders').pipe(
-//       map((rawOrders: rawOrders[]) => this.transformData(rawOrders))
-//     )
-//  };
-
-getOrders(dateForm: NgForm): Observable<orders[]> {
-  return this.post(
-    '/orders/dates', {
-      "startDate":dateForm.value.from,
-      "endDate":dateForm.value.to
-  }).pipe(
-    map((rawOrders: any) => this.transformData(rawOrders))
-  );
-}
-
-
+  getOrders(dateForm: NgForm): Observable<orders[]> {
+    return this.post('/orders/dates', {
+      startDate: dateForm.value.from,
+      endDate: dateForm.value.to,
+    }).pipe(map((rawOrders: any) => this.transformData(rawOrders)));
+  }
 
   transformData(rawOrders: rawOrders[]): orders[] {
     return rawOrders.map((data) => ({
       id: data.id,
       name: data.dishName,
       amount: data.amount,
-      price: parseFloat (data.dish.price),
+      price: parseFloat(data.dish.price),
       totalPrice: Number(data.amount) * Number(data.dish.price),
-      ids_categories: data.dish.idsCategories.map((id: string) => parseInt(id, 10)),
-      date: data.datePurchase
+      ids_categories: data.dish.idsCategories.map((id: string) =>
+        parseInt(id, 10)
+      ),
+      date: data.datePurchase,
     }));
   }
-  
-
-
-
 
   getSales(dateForm: NgForm) {
-    return this.post(
-     `/orders/date`,  { 
-      "startDate":dateForm.value.from,
-      "endDate":dateForm.value.to
-     }
-    ).pipe(map((orders) => {}));
+    return this.post(`/orders/date`, {
+      startDate: dateForm.value.from,
+      endDate: dateForm.value.to,
+    }).pipe(map((orders) => {}));
   }
-
-
 }

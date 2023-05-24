@@ -10,7 +10,6 @@ export class HttpService {
   private httpClient = inject(HttpClient);
   private baseUrl = 'http://localhost:3000';
   private headers = new HttpHeaders({
-    'Content-Type': 'application/json',
     security_token: sessionStorage.getItem('access_token')
       ? sessionStorage.getItem('access_token')!
       : '',
@@ -31,7 +30,7 @@ export class HttpService {
       );
   }
 
-  post<T>(url: string, body: any) {
+  post<T>(url: string, body: any | FormData) {
     return this.httpClient
       .post<T>(`${this.baseUrl}${url}`, body, { headers: this.headers })
       .pipe(

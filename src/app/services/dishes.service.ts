@@ -1,9 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpService } from './http.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class DishesService {
+export class DishesService extends HttpService {
+  constructor() {
+    super();
+  }
 
-  constructor() { }
+  createDish(form: FormData) {
+    this.post('/dishes', form).subscribe((dish) => {
+      console.log(dish);
+    });
+  }
 }

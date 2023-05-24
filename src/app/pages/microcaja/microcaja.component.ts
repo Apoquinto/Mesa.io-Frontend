@@ -25,12 +25,6 @@ export class MicrocajaComponent implements OnInit {
         console.error('Error al obtener categorías:', error);
       }
     );
-
-   // this.getOrders();
-
-
-
-
   }
 
   fromDate: string;
@@ -46,54 +40,39 @@ export class MicrocajaComponent implements OnInit {
     const month = String(today.getMonth() + 1).padStart(2, '0');
     const year = today.getFullYear();
 
-     this.orders = this.actualFilter = []
-
-    
+    this.orders = this.actualFilter = [];
 
     this.fromDate = this.toDate = `${year}-${month}-${day}`;
   }
-
 
   getOrders(form: NgForm) {
     this.cajaService.getOrders(form).subscribe(
       (orders: orders[]) => {
         this.orders = this.actualFilter = orders;
-        console.log(orders)
-      }
-      ,
+        console.log(orders);
+      },
       (error) => {
         console.error('Error al obtener ordenes:', error);
       }
     );
   }
 
-
-
-
   submitForm(form: NgForm) {
     const from = new Date(form.value.from);
     const to = new Date(form.value.to);
     if (from > to) alert(`La fecha ${this.fromDate} es mayor a ${this.toDate}`);
     this.getOrders(form);
-
-    
   }
 
   onCategoryChange() {
-
-    if (this.selectedOption === ''){
-      this.actualFilter= this.orders
-    }else{
+    if (this.selectedOption === '') {
+      this.actualFilter = this.orders;
+    } else {
       this.actualFilter = this.orders.filter((orders) => {
-        return orders.ids_categories.includes( parseInt(this.selectedOption))
-      
+        return orders.ids_categories.includes(parseInt(this.selectedOption));
       });
     }
 
-  
-
     console.log(this.actualFilter);
   }
-
-
 }
