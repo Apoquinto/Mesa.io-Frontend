@@ -45,9 +45,9 @@ export class NavbarComponent implements OnDestroy {
           url: '/dishes',
         },
         {
-          label: 'Orders',
+          label: 'Shop',
           icon: 'bx bxs-file',
-          url: '/orders',
+          url: '/shop',
         },
       ],
     };

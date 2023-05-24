@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Dish from 'src/app/Interfaces/dish';
+import Pagination from 'src/app/Interfaces/pagination';
 import { MenulistService } from 'src/app/services/menulist.service';
 import { ShopService } from 'src/app/services/shop.service';
 
@@ -13,13 +14,13 @@ export class MenuclientlistComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
-    this.menuService.getDishes().subscribe((dishes: Dish[]) => {
-      this.dishesForShot = dishes.filter((dish) => {
-        console.log(dish.idsCategories);
-        return dish.idsCategories.includes(id!);
+    this.menuService.getDishes().subscribe((pag: Pagination) => {
+      this.dishesForShot = pag.items.filter((dish) => {
+        return (
+          dish.idsCategories.includes('[' + id!) ||
+          dish.idsCategories.includes(id! + ']')
+        );
       });
-      console.log(this.dishesForShot);
     });
   }
 

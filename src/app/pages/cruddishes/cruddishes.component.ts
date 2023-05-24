@@ -15,7 +15,7 @@ export class CRUDdishesComponent {
   constructor(private menuService: MenulistService, private router: Router) {
     this.menuService.getDishes().pipe(
       map((value) => {
-        this.dishes = value;
+        this.dishes = value.items;
       })
     );
   }
