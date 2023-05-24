@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import Products from '../Interfaces/products';
-import Dish, { Ind_Dish } from '../Interfaces/dish';
+import Dish from '../Interfaces/dish';
 import { HttpService } from './http.service';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class ShopService extends HttpService {
     this.buyCar = [];
   }
 
-  addProduct(dish: Ind_Dish) {
+  addProduct(dish: Dish) {
     let toMod = this.buyCar.find((product) => {
       return product.name === dish.name;
     });

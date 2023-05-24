@@ -18,7 +18,7 @@ export class MenulistService extends HttpService {
   }
 
   getDishes() {
-    return this.get<Dish>('/dishes/search?').pipe(
+    return this.get<Dish[]>('/dishes/search?').pipe(
       map((dishes) => {
         console.log(dishes);
         return dishes;
