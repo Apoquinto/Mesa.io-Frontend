@@ -15,7 +15,7 @@ interface Link {
 })
 export class NavbarComponent implements OnDestroy {
   isLoggedIn: boolean = false;
-  userType: string = 'user';
+  userType: string = localStorage.getItem('role')!;
   links: Link[] = [];
   private subscriptions: Subscription[] = [];
 
@@ -40,13 +40,13 @@ export class NavbarComponent implements OnDestroy {
           url: '/menu',
         },
         {
-          label: 'Dishes',
-          icon: 'bx bxs-dish',
-          url: '/dishes',
+          label: 'Log In',
+          icon: 'bx bxs-log-in',
+          url: '/login',
         },
         {
           label: 'Shop',
-          icon: 'bx bxs-file',
+          icon: 'bx bxs-cart',
           url: '/shop',
         },
       ],
@@ -54,12 +54,15 @@ export class NavbarComponent implements OnDestroy {
     this.subscriptions.push(
       this.loginService.isLoggedIn().subscribe((loggedIn) => {
         this.isLoggedIn = loggedIn;
-      }),
-      this.loginService.roleType().subscribe((role) => {
-        this.userType = role;
-        this.links = role === 'admin' ? linksData.admin : linksData.user;
       })
     );
+
+    this.links =
+      localStorage.getItem('role') === 'admin'
+        ? linksData.admin
+        : linksData.user;
+
+    console.log(this.links);
   }
 
   ngOnDestroy(): void {

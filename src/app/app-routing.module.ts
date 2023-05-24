@@ -30,7 +30,6 @@ const routes: Routes = [
   {
     path: 'homeAdmin',
     component: MicrocajaComponent,
-    canActivate: [RoleGuard],
   },
   { path: 'dishes', component: CRUDdishesComponent, canActivate: [RoleGuard] },
   {
